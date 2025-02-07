@@ -10,10 +10,10 @@ os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']
 # Create prompt template for generating tweets
 
 From = """
-        Write a Romantic Message {From} to {To}. It should not be long, Just 4 lines.
+        Write a Romantic Message {From} to {To} for the topic {Topic}. It should not be long, Just 4 lines.
         It should be cute and expressive. Dont include any vulgar. Should be smiling message.
         """
-msg = PromptTemplate(template = From, input_variables = ['From', 'To'])
+msg = PromptTemplate(template = From, input_variables = ['From', 'To', 'Topic'])
 
 # Initialize Google's Gemini model
 gemini_model = ChatGoogleGenerativeAI(model = "gemini-1.5-flash-latest")
