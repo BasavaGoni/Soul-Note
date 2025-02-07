@@ -36,13 +36,19 @@ if st.button("Generate"):
     tweets = tweet_chain.invoke({"From" : From, "To" : To, "Topic" : Topic})
     st.write(tweets.content)
     
+import streamlit as st
+
 st.markdown(
-    """
+    f"""
     <style>
-    body {
-        background-color: #f0f2f6;  /* Replace with your desired color code */
-    }
+    .stApp {{
+        background-image: url("https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8&w=1000&q=80");
+        background-attachment: fixed;
+        background-size: cover;
+    }}
     </style>
     """,
-    unsafe_allow_html=True,
+    unsafe_allow_html=True
 )
+
+# Rest of your Streamlit app code
