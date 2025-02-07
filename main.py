@@ -38,6 +38,10 @@ st.markdown(
     label {
         text-align: left;
         float: left; 
+        margin-bottom: -15px; /* Adjust this value as needed */
+    }
+    div.stTextInput > label, div.stTextArea > label {
+        margin-top: -15px; /* Adjust this value as needed */
     }
     </style>
     """,
