@@ -42,7 +42,7 @@ st.markdown(
     f"""
     <style>
     .stApp {{
-        background-image: url("https://th.bing.com/th/id/R.5a567e90fd0eae9cedea8fb2dab8c46c?rik=pbpkh2frp%2fRh5g&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f03%2fTwo-little-red-heart-wallpaper-HD-photo.jpg&ehk=KFvG4f%2fOtOodX9Esw6gPYdv8R%2flpl%2beCWyj%2bVZEFMYE%3d&risl=&pid=ImgRaw&r=0");
+        background-image: url("https://th.bing.com/th/id/R.4e8048922a137863c3918ca6a2b83bae?rik=N82vq8qNxd%2bm8g&riu=http%3a%2f%2fwww.superiorwallpapers.com%2fdownload%2ftwo-hearts-in-a-vector-and-design-wallpaper-5120x3200.jpg&ehk=VAUWTBl0KEXvGzpLWJa0vdRcEt3zFhBJMpHQrwARJTQ%3d&risl=&pid=ImgRaw&r=0");
         background-attachment: fixed;
         background-size: cover;
     }}
