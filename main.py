@@ -48,14 +48,9 @@ st.header("🐦Soul Note🐦")
 st.subheader("🤖 Generated a message for your love")
 
 
-col1, col2, col3 = st.columns(3)
-
-with col1:
-    From = st.text_input("From")
-with col2:
-    To = st.text_input("To")
-with col3:
-    Topic = st.text_input("Topic")
+From = st.text_input("From")
+To = st.text_input("To")
+Topic = st.text_input("Topic")
 
 
 
