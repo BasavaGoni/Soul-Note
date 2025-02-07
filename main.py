@@ -13,13 +13,13 @@ From = """
         Write a Romantic Message {From} to {To}. It should not be long, Just 4 lines.
         It should be cute and expressive. Dont include any vulgar. Should be smiling message.
         """
-Msg = PromptTemplate(template = From, input_variables = ['From', 'To'])
+msg = PromptTemplate(template = From, input_variables = ['From', 'To'])
 
 # Initialize Google's Gemini model
 gemini_model = ChatGoogleGenerativeAI(model = "gemini-1.5-flash-latest")
 
 # Create LLM chain using the prompt template and model
-tweet_chain = Msg | gemini_model
+tweet_chain = msg | gemini_model
 
 
 import streamlit as st
