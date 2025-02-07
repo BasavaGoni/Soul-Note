@@ -9,29 +9,29 @@ os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']
 
 # Create prompt template for generating tweets
 
-tweet_template = "Give me {number} tweets on {topic}"
-
-tweet_prompt = PromptTemplate(template = tweet_template, input_variables = ['number', 'topic'])
+From = """
+        Write a Romantic Message {From} to {To}. It should not be long, Just 4 lines.
+        It should be cute and expressive. Dont include any vulgar. Should be smiling message.
+        """
+Msg = PromptTemplate(template = From, input_variables = ['From', 'To'])
 
 # Initialize Google's Gemini model
 gemini_model = ChatGoogleGenerativeAI(model = "gemini-1.5-flash-latest")
 
-
 # Create LLM chain using the prompt template and model
-tweet_chain = tweet_prompt | gemini_model
+tweet_chain = Msg | gemini_model
 
 
 import streamlit as st
 
-st.header("🐦Tweet Generator🐦")
+st.header("🐦Soul Note🐦")
 
-st.subheader("Generate tweets using 🤖")
+st.subheader("🤖 Generated a message for your love")
 
-topic = st.text_input("Topic")
-
-number = st.number_input("Number of tweets", min_value = 1, max_value = 10, value = 1, step = 1)
+From = st.text_input("From")
+To = st.text_input("To")
 
 if st.button("Generate"):
-    tweets = tweet_chain.invoke({"number" : number, "topic" : topic})
+    tweets = tweet_chain.invoke({"From" : From, "To" : To})
     st.write(tweets.content)
     
