@@ -36,3 +36,13 @@ if st.button("Generate"):
     tweets = tweet_chain.invoke({"From" : From, "To" : To, "Topic" : Topic})
     st.write(tweets.content)
     
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #f0f2f6;  /* Replace with your desired color code */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
