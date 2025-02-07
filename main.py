@@ -42,7 +42,7 @@ st.markdown(
     f"""
     <style>
     .stApp {{
-        background-image: url("https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8&w=1000&q=80");
+        background-image: url("https://static.vecteezy.com/system/resources/previews/036/730/569/non_2x/ai-generated-two-heart-shape-hanging-in-a-frame-at-night-in-dark-forest-free-photo.jpg");
         background-attachment: fixed;
         background-size: cover;
     }}
