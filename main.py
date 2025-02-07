@@ -30,8 +30,9 @@ st.subheader("🤖 Generated a message for your love")
 
 From = st.text_input("From")
 To = st.text_input("To")
+Topic = st.text_input("Topic")
 
 if st.button("Generate"):
-    tweets = tweet_chain.invoke({"From" : From, "To" : To})
+    tweets = tweet_chain.invoke({"From" : From, "To" : To, "Topic" : Topic})
     st.write(tweets.content)
     
