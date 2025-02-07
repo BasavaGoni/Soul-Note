@@ -24,31 +24,41 @@ tweet_chain = msg | gemini_model
 
 import streamlit as st
 
-st.header("🐦Soul Note🐦")
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-image: url("https://th.bing.com/th/id/R.4e8048922a137863c3918ca6a2b83bae?rik=N82vq8qNxd%2bm8g&riu=http%3a%2f%2fwww.superiorwallpapers.com%2fdownload%2ftwo-hearts-in-a-vector-and-design-wallpaper-5120x3200.jpg&ehk=VAUWTBl0KEXvGzpLWJa0vdRcEt3zFhBJMpHQrwARJTQ%3d&risl=&pid=ImgRaw&r=0");
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    .stTextArea textarea, .stTextInput input {
+        text-align: left; 
+    }
+    label {
+        text-align: left;
+        float: left; 
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 
+st.header("🐦Soul Note🐦")
 st.subheader("🤖 Generated a message for your love")
 
-From = st.text_input("From")
-To = st.text_input("To")
-Topic = st.text_input("Topic")
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    From = st.text_input("From")
+with col2:
+    To = st.text_input("To")
+with col3:
+    Topic = st.text_input("Topic")
+
+
 
 if st.button("Generate"):
     tweets = tweet_chain.invoke({"From" : From, "To" : To, "Topic" : Topic})
     st.write(tweets.content)
-    
-import streamlit as st
-
-st.markdown(
-    f"""
-    <style>
-    .stApp {{
-        background-image: url("https://th.bing.com/th/id/R.4e8048922a137863c3918ca6a2b83bae?rik=N82vq8qNxd%2bm8g&riu=http%3a%2f%2fwww.superiorwallpapers.com%2fdownload%2ftwo-hearts-in-a-vector-and-design-wallpaper-5120x3200.jpg&ehk=VAUWTBl0KEXvGzpLWJa0vdRcEt3zFhBJMpHQrwARJTQ%3d&risl=&pid=ImgRaw&r=0");
-        background-attachment: fixed;
-        background-size: cover;
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-# Rest of your Streamlit app code
