@@ -22,4 +22,18 @@ tweet_chain = msg | gemini_model
 
 # HTML, CSS, and JavaScript for background GIF
 background_html = """
-<div style
+<div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url('https://media.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif'); background-size: cover; opacity: 0.2; z-index: -1;"></div>
+"""
+
+st.components.v1.html(background_html, height=0)
+
+st.header("🐦Soul Note🐦")
+st.subheader("🤖 Generated a message for your love")
+
+From = st.text_input("From")
+To = st.text_input("To")
+Topic = st.text_input("Topic")
+
+if st.button("Generate"):
+    tweets = tweet_chain.invoke({"From": From, "To": To, "Topic": Topic})
+    st.write(tweets.content)
