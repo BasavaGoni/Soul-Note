@@ -39,3 +39,13 @@ if st.button("Generate"):
 import streamlit as st
 
 st.markdown( f""" """, unsafe_allow_html=True )
+
+# Add a GIF with a delay
+gif_url = "https://media.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif"  # Replace with your GIF URL
+
+while True:
+    st.image(gif_url)
+    time.sleep(4)  # Display for 4 seconds
+    st.empty()  # Clear the image
+    time.sleep(2)  # Wait for 2 seconds before displaying again
+
