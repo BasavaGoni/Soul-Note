@@ -38,6 +38,7 @@ st.markdown(
     .content {
         position: relative;
         z-index: 1;
+        backdrop-filter: blur(10px); /* Blurs the background behind the content */
     }
     </style>
     <div class="bg"></div>
