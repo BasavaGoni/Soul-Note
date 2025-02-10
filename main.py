@@ -20,8 +20,32 @@ gemini_model = ChatGoogleGenerativeAI(model = "gemini-1.5-flash-latest")
 # Create LLM chain using the prompt template and model
 tweet_chain = msg | gemini_model
 
-# Display a GIF at the top of the app
-st.image("https://media.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif", use_column_width=True)
+# Add CSS for background GIF
+st.markdown(
+    """
+    <style>
+    .bg {
+        background-image: url("https://media.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif");
+        background-size: cover;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.2;  /* Adjust the opacity to your preference */
+    }
+    .content {
+        position: relative;
+        z-index: 1;
+    }
+    </style>
+    <div class="bg"></div>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown('<div class="content">', unsafe_allow_html=True)
 
 st.header("🐦Soul Note🐦")
 st.subheader("🤖 Generated a message for your love")
@@ -33,3 +57,5 @@ Topic = st.text_input("Topic")
 if st.button("Generate"):
     tweets = tweet_chain.invoke({"From": From, "To": To, "Topic": Topic})
     st.write(tweets.content)
+
+st.markdown('</div>', unsafe_allow_html=True)
