@@ -45,7 +45,7 @@ gif_url = "https://media.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif"  # Replac
 
 while True:
     st.image(gif_url)
-    time.sleep(4)  # Display for 4 seconds
+    time.sleep(1)  # Display for 4 seconds
     st.empty()  # Clear the image
-    time.sleep(2)  # Wait for 2 seconds before displaying again
+    time.sleep(1)  # Wait for 2 seconds before displaying again
 
