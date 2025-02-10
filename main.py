@@ -41,7 +41,7 @@ import streamlit as st
 
 st.markdown( f""" """, unsafe_allow_html=True )
 
-gif_url = "https://media.giphy.com/media/xT5LMHxhOfscxUM0Co/giphy.gif"  # Replace with your GIF URL
+gif_url = "https://pin.it/3t9XdpGhe"  # Replace with your GIF URL
 
 def display_gif(gif_url):
     st.markdown(f'<img src="{gif_url}" width="200">', unsafe_allow_html=True)
