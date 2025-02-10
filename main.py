@@ -39,16 +39,3 @@ if st.button("Generate"):
 import streamlit as st
 
 st.markdown( f""" """, unsafe_allow_html=True )
-
-st.set_page_config(
-    page_title="Your App Title",
-    page_icon=":tada:",
-    layout="wide",
-    initial_sidebar_state="expanded",
-    theme={
-        "primaryColor": "#FF4B4B",
-        "backgroundColor": "#F0F2F6",
-        "secondaryBackgroundColor": "#E2E2E2",
-        "textColor": "#333333",
-        "font": "sans-serif"
-    }
