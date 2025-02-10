@@ -22,7 +22,25 @@ tweet_chain = msg | gemini_model
 
 # HTML, CSS, and JavaScript for background GIF
 background_html = """
-<div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url('https://media.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif'); background-size: cover; opacity: 0.2; z-index: -1;"></div>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-image: url('https://media.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+</style>
+</head>
+<body>
+</body>
+</html>
 """
 
 st.components.v1.html(background_html, height=0)
