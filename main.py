@@ -41,26 +41,4 @@ import streamlit as st
 
 st.markdown( f""" """, unsafe_allow_html=True )
 
-gif_url = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2M4dGVkNzF1ODJ5bzVhcHdsY3F6dzdrNXo5MDBhdG90d281c25jZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIP6jXimEmTmGyIw/giphy.gif"  # Replace with your GIF URL
-
-def display_gif(gif_url):
-    st.markdown(f'<img src="{gif_url}" width="200">', unsafe_allow_html=True)
-
-def hide_gif():
-    st.empty()  # Clear the previous GIF display
-
-display_time = 2  # Display GIF for 2 seconds
-hide_time = 2  # Hide GIF for 2 seconds
-
-start_time = time.time()
-
-while True:
-    elapsed_time = time.time() - start_time
-
-    if elapsed_time % (display_time + hide_time) < display_time:
-        display_gif(gif_url)
-    else:
-        hide_gif()
-
-    time.sleep(0.1)  # Small delay to prevent excessive CPU usage
 
