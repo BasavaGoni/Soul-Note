@@ -4,6 +4,7 @@ from langchain import PromptTemplate
 
 import streamlit as st
 import os
+import time        
 
 os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']
 
@@ -40,12 +41,26 @@ import streamlit as st
 
 st.markdown( f""" """, unsafe_allow_html=True )
 
-# Add a GIF with a delay
-gif_url = "https://media.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif"  # Replace with your GIF URL
+gif_url = "https://media.giphy.com/media/xT5LMHxhOfscxUM0Co/giphy.gif"  # Replace with your GIF URL
+
+def display_gif(gif_url):
+    st.markdown(f'<img src="{gif_url}" width="200">', unsafe_allow_html=True)
+
+def hide_gif():
+    st.empty()  # Clear the previous GIF display
+
+display_time = 2  # Display GIF for 2 seconds
+hide_time = 2  # Hide GIF for 2 seconds
+
+start_time = time.time()
 
 while True:
-    st.image(gif_url)
-    time.sleep(1)  # Display for 4 seconds
-    st.empty()  # Clear the image
-    time.sleep(1)  # Wait for 2 seconds before displaying again
+    elapsed_time = time.time() - start_time
+
+    if elapsed_time % (display_time + hide_time) < display_time:
+        display_gif(gif_url)
+    else:
+        hide_gif()
+
+    time.sleep(0.1)  # Small delay to prevent excessive CPU usage
 
