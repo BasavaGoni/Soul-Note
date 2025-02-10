@@ -36,7 +36,7 @@ st.markdown(
     """
     <style>
     .bg {
-        background-image: url("https://media.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif");
+        background-image: url("https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMHFpYjRrNDI0eDJxNmNpOXMxdmNxYmxtNTV5aGZsZmh3aHFjeXBuayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vmYEXxc5vq7Zu/giphy.gif");
         background-size: cover;
         position: absolute;
         top: 0;
