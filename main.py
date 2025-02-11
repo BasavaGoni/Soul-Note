@@ -11,7 +11,7 @@ os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']
 
 From = """
         Write a Romantic Message {From} to {To} for the topic {Topic}. It should not be long, Just 4 lines.
-        It should be cute and expressive. Dont include any vulgar. Should be smiling message.
+        It should be cute and expressive. Dont include any vulgar. Should be smiling message. Also there should not be same From and To name.
         """
 msg = PromptTemplate(template = From, input_variables = ['From', 'To', 'Topic'])
 
@@ -24,15 +24,15 @@ tweet_chain = msg | gemini_model
 
 import streamlit as st
 
-st.header("🐦Soul Note🐦")
+st.header("💕Soul Note💕")
 
-st.subheader("🤖 Generated a message for your love")
+st.subheader("Crafting 💖 Messages with 🫀 by 🤖")
 
 From = st.text_input("From") 
 To = st.text_input("To") 
 Topic = st.text_input("Topic")
 
-if st.button("Generate"): 
+if st.button("Spark"): 
         tweets = tweet_chain.invoke({"From" : From, "To" : To, "Topic" : Topic})
         st.write(tweets.content)
 
