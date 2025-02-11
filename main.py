@@ -38,4 +38,11 @@ if st.button("Click Me"):
 
 import streamlit as st
 
+
+# Add footer
+footer = """
+<div style='position: fixed; bottom: 0; width: 100%; background-color: #f0f0f0; text-align: center; padding: 10px 0;'>
+    <p>Created by <strong>Basavaraj Goni</strong></p>
+</div>
+"""
 st.markdown( f""" """, unsafe_allow_html=True )
