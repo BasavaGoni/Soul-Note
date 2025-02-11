@@ -26,7 +26,7 @@ import streamlit as st
 
 st.header("💕Soul Note💕")
 
-st.subheader("Crafting 💖 Messages with 🫀 by 🤖")
+st.subheader("Crafting ❤️💛💚 Messages with 🫀 by 🤖")
 
 From = st.text_input("From") 
 To = st.text_input("To") 
