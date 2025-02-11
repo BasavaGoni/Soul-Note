@@ -46,7 +46,7 @@ footer = """
 }
 </style>
 <div class="footer">
-    <p>Created by <strong>Your Name</strong></p>
+    <p>Created by <strong>Basavaraj Goni</strong></p>
 </div>
 """
 st.markdown(footer, unsafe_allow_html=True)
