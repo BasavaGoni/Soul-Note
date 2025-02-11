@@ -11,7 +11,7 @@ os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']
 
 From = """
         Write a Romantic Message {From} to {To} for the topic {Topic}. It should not be long, Just 4 lines.
-        It should be cute and expressive. Dont include any vulgar. Should be smiling message. Also there should not be same From and To name.
+        It should be cute and expressive. Dont include any vulgar. Should be smiling message.
         """
 msg = PromptTemplate(template = From, input_variables = ['From', 'To', 'Topic'])
 
@@ -32,7 +32,7 @@ From = st.text_input("From")
 To = st.text_input("To") 
 Topic = st.text_input("Topic")
 
-if st.button("Spark"): 
+if st.button("Spark"):
         tweets = tweet_chain.invoke({"From" : From, "To" : To, "Topic" : Topic})
         st.write(tweets.content)
 
